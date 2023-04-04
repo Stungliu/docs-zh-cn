@@ -522,7 +522,14 @@ console.log(app.config)
     }
   }
   ```
-
+在`<script setup>`中可以使用`app.config.globalProperties`访问到：
+```
+<script setup>
+import { getCurrentInstance } from 'vue'
+const { proxy } = getCurrentInstance()
+console.log(proxy.msg)
+</script>
+```
 - **参考**：[指南 - 扩展全局属性](/guide/typescript/options-api#augmenting-global-properties) <sup class="vt-badge ts" />
 
 ## app.config.optionMergeStrategies {#app-config-optionmergestrategies}
